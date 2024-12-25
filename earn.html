@@ -11,7 +11,22 @@
     <link rel="icon" type="image/x-icon" href="./assets/favicon/favicon.ico">
 </head>
 <body class="earn">
-
+<script>
+            // insert your block id
+            const AdController = window.Adsgram.init({ blockId: "6607" });
+            const button = document.getElementById('ad');
+            button.addEventListener('click', () => {
+                AdController.show().then((result) => {
+                    // user watch ad till the end or close it in interstitial format
+                    // your code to reward user for rewarded format
+                    alert('Reward');
+                }).catch((result) => {
+                    // user get error during playing ad
+                    // do nothing or whatever you want
+                    alert(JSON.stringify(result, null, 4));
+                })
+            })
+</script>
     <div class="haeder">
         <a href="index.html">
             <svg width="25px" height="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
